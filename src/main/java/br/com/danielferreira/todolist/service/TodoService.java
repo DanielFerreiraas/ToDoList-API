@@ -2,6 +2,7 @@ package br.com.danielferreira.todolist.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,8 @@ import br.com.danielferreira.todolist.repository.TodoRepository;
 @Service
 public class TodoService {
 
+    @Autowired
     private TodoRepository todoRepository;
-
-    public TodoService(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
 
     public List<Todo> create(Todo todo){
         todoRepository.save(todo);
