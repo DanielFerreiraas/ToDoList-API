@@ -1,5 +1,6 @@
-package br.com.danielferreira.todolist.entity;
+package br.com.danielferreira.todolist.entity.todo;
 
+import br.com.danielferreira.todolist.entity.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,9 +22,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @EqualsAndHashCode(of="id")
 public class Todo {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @ManyToOne
     @JoinColumn(name="user_id")

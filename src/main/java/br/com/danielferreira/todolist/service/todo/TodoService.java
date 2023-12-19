@@ -1,4 +1,4 @@
-package br.com.danielferreira.todolist.service;
+package br.com.danielferreira.todolist.service.todo;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import br.com.danielferreira.todolist.entity.Todo;
-import br.com.danielferreira.todolist.repository.TodoRepository;
+import br.com.danielferreira.todolist.entity.todo.Todo;
+import br.com.danielferreira.todolist.repository.todo.TodoRepository;
 
 @Service
 public class TodoService {
@@ -30,7 +30,7 @@ public class TodoService {
         return list();
     }
 
-     public List<Todo> delete(Long id){
+     public List<Todo> delete(String id){
         todoRepository.deleteById(id);
         return list();
     }
